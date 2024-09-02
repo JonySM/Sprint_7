@@ -1,9 +1,7 @@
 import allure
 import pytest
 import requests
-
 import urls
-from data import Data
 from qa_scooter_api import QaScooterApi
 
 
