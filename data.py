@@ -58,5 +58,9 @@ class Data:
         "password": "Stick"
     }
 
+    BLACK_COLOR = ["BLACK"]
+    BLACK_AND_GREY_COLORS = "BLACK", "GREY"
+    EMPTY_COLOR = ["  "]
+
 
 

@@ -1,5 +1,7 @@
 import allure
 import requests
+
+import urls
 from data import Data
 from qa_scooter_api import QaScooterApi
 
@@ -18,7 +20,7 @@ class TestCreateCourier:
         assert create_request_second.status_code == 409 and create_request_second.text == Data.CREATE_ERROR_RESPONSE
         response = QaScooterApi.login()
         courier_id = response.json()['id']
-        response_del = requests.delete(f"https://qa-scooter.praktikum-services.ru/api/v1/courier/{courier_id}")
+        response_del = requests.delete(f'{urls.BASE_URL}{urls.DELETE_COURIER}{courier_id}')
         assert response_del.status_code == 200 and response_del.text == '{"ok":true}'
 
     @allure.title('Проверка создания курьера без логина')
